@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  vars:
+    ansible_user: ansible
+    ruby_install_from_source: true
+    ruby_download_url: https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
+    ruby_version: 2.7.1
+  roles:
+    - geerlingguy.ruby
+    - cureutils
