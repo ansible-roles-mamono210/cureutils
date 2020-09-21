@@ -1,0 +1,8 @@
+---
+roles:
+  - name: geerlingguy.ruby
+  - name: cureutils
+    src: https://github.com/ansible-roles-matsumura/cureutils.git
+
+collections:
+  - name: community.general
