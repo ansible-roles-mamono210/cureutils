@@ -1,2 +1,3 @@
 ---
-- geerlingguy.ruby
+roles:
+  - name: geerlingguy.ruby
