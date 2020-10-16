@@ -38,7 +38,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: pip install -r molecule/requirements.txt
+        run: python3 -m pip install -r molecule/requirements.txt
 
       - name: Test with molecule
         env:
