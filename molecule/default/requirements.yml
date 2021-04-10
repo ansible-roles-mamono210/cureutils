@@ -1,3 +1,4 @@
 ---
 roles:
-  - name: geerlingguy.ruby
+  - name: mamono210.ruby
+    src: https://github.com/ansible-roles-matsumura/ruby.git
