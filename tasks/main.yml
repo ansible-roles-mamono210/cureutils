@@ -16,7 +16,7 @@
   when: CUREUTILS_INSTALLED is failed
 
 - name: Update gem
-  ansible.builtin.shell: gem update --system
+  ansible.builtin.command: gem update --system
   ignore_errors: yes
   when: CUREUTILS_INSTALLED is failed
 
