@@ -1,7 +1,7 @@
 ---
 - name: Check whether Cureutils command is installed
   ansible.builtin.command: cure version
-  register: CUREUTILS_INSTALLED
+  register: cureutils_installed
   ignore_errors: yes
   changed_when: false
   environment:
@@ -13,16 +13,16 @@
     name: bundler
     state: latest
     user_install: no
-  when: CUREUTILS_INSTALLED is failed
+  when: cureutils_installed is failed
 
 - name: Update gem
   ansible.builtin.command: gem update --system
   ignore_errors: yes
-  when: CUREUTILS_INSTALLED is failed
+  when: cureutils_installed is failed
 
 - name: Install Cureutils
   community.general.gem:
     name: cureutils
     state: present
     user_install: no
-  when: CUREUTILS_INSTALLED is failed
+  when: cureutils_installed is failed
