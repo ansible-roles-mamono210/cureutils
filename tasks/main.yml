@@ -2,7 +2,7 @@
 - name: Check whether Cureutils command is installed
   ansible.builtin.command: cure version
   register: cureutils_installed
-  ignore_errors: yes
+  failed_when: false
   changed_when: false
   environment:
     RUBYOPT: -EUTF-8
@@ -13,16 +13,15 @@
     name: bundler
     state: latest
     user_install: no
-  when: cureutils_installed is failed
+  when: cureutils_installed.msg is search("No such file or directory")
 
 - name: Update gem
   ansible.builtin.command: gem update --system
-  ignore_errors: yes
-  when: cureutils_installed is failed
+  when: cureutils_installed.msg is search("No such file or directory")
 
 - name: Install Cureutils
   community.general.gem:
     name: cureutils
     state: present
     user_install: no
-  when: cureutils_installed is failed
+  when: cureutils_installed.msg is search("No such file or directory")
