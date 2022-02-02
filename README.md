@@ -3,7 +3,7 @@
 Role Description
 =========
 
-Installs [Cureutils](https://github.com/greymd/cureutils) for CentOS7.
+Installs [Cureutils](https://github.com/greymd/cureutils) for CentOS7/Stream8.
 
 Requirements
 ------------
