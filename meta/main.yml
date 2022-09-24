@@ -10,6 +10,6 @@ galaxy_info:
   role_name: cureutils
   platforms:
     - name: EL
-      versions:
+      release:
         - 7
         - 8
